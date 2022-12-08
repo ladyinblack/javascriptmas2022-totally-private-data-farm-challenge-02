@@ -28,12 +28,10 @@ function transformData(data) {
   const objEvilFarm = [];
   for (let i = 0; i < data.length; i++) {
     // console.log(data[i].name.first + ' ' + data[i].name.last);
-    let fullName = data[i].name.first + ' ' + data[i].name.last;
-    let birthdate = new Date(data[i].dob.date).toDateString();
     // console.log(birthdate.toDateString());
     const datafarm = {
-      fullName: fullName,
-      birthday: birthdate,
+      fullName: data[i].name.first + ' ' + data[i].name.last,
+      birthday: new Date(data[i].dob.date).toDateString(),
     };
     objEvilFarm.push(datafarm);
   }
